@@ -51,8 +51,6 @@ def send_message(bot, message):
 def get_api_answer(current_timestamp):
     """Запрос данных к API."""
     timestamp = current_timestamp or int(time.time())
-    if not isinstance(timestamp, int):
-        raise Exception('Неверный тип времени.')
     params = {'from_date': timestamp}
     try:
         response_hw_status = requests.get(
